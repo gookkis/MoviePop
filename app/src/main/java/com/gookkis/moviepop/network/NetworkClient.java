@@ -2,7 +2,7 @@ package com.gookkis.moviepop.network;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import com.gookkis.moviepop.utils.ApiConst;
+import com.gookkis.moviepop.utils.Const;
 
 import okhttp3.OkHttpClient;
 import retrofit2.Retrofit;
@@ -22,7 +22,7 @@ public class NetworkClient {
             OkHttpClient.Builder builder = new OkHttpClient.Builder();
             OkHttpClient okHttpClient = builder.build();
             retrofit = new Retrofit.Builder()
-                    .baseUrl(ApiConst.BASE_URL)
+                    .baseUrl(Const.BASE_URL)
                     .addConverterFactory(GsonConverterFactory.create(gson))
                     .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                     .client(okHttpClient)

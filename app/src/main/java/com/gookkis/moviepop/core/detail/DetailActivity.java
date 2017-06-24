@@ -7,7 +7,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.gookkis.moviepop.R;
-import com.gookkis.moviepop.utils.ApiConst;
 import com.gookkis.moviepop.utils.Const;
 import com.gookkis.moviepop.utils.Helpers;
 import com.squareup.picasso.Picasso;
@@ -47,7 +46,7 @@ public class DetailActivity extends AppCompatActivity implements DetailView {
             tvRating.setText(getIntent().getStringExtra(Const.vote_average));
             tvReleasedDate.setText(getIntent().getStringExtra(Const.release_date));
             tvSynopsis.setText(getIntent().getStringExtra(Const.overview));
-            Picasso.with(getApplicationContext()).load(ApiConst.URL_POSTER + getIntent().getStringExtra(Const.poster_path))
+            Picasso.with(getApplicationContext()).load(Const.URL_POSTER + getIntent().getStringExtra(Const.poster_path))
                     .resize(Helpers.getWidthPoster(this) * 2, 0).into(ivPoster);
         }
 

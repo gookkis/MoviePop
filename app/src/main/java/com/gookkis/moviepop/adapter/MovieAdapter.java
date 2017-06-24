@@ -9,7 +9,7 @@ import android.widget.ImageView;
 
 import com.gookkis.moviepop.R;
 import com.gookkis.moviepop.models.Result;
-import com.gookkis.moviepop.utils.ApiConst;
+import com.gookkis.moviepop.utils.Const;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
@@ -41,7 +41,7 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MovieViewHol
     @Override
     public void onBindViewHolder(MovieViewHolder holder, int position) {
         Result result = results.get(position);
-        Picasso.with(context).load(ApiConst.URL_POSTER + result.getPosterPath())
+        Picasso.with(context).load(Const.URL_POSTER + result.getPosterPath())
                 .resize(widthPoster, 0)
                 .placeholder(R.drawable.ic_photo_album_deep_purple_a200_48dp)
                 .error(R.drawable.ic_error_outline_red_400_48dp)
